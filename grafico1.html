@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>grafico</title>
+</head>
+
+<body>
+    <canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+            heigth: 1000,
+            width: 100,
+
+            // The data for our dataset
+            data: {
+                labels: ['January'],
+                datasets: [{
+                    label: 'My First dataset',
+                    data: [35]
+                },
+                {
+                    label: 'My Second dataset',
+                    data: [40]
+                },
+                {
+                    label: 'My TIRTH dataset',
+                    data: [30]
+                }]
+            },
+            options: {
+                // This chart will not respond to mousemove, etc
+                onClick: (dt) => {
+                    console.log(dt)
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
